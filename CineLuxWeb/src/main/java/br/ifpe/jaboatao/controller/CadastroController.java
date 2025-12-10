@@ -30,7 +30,7 @@ public class CadastroController {
         }
 
         pr.save(pessoa);
-        return "redirect:/login";
+        return "redirect:/index";
     }
 
 }
