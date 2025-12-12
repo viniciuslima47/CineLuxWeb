@@ -5,53 +5,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: dm-serif-display, serif;
+    }
+
+    body {
+        background-color: antiquewhite;
+        color: black
+    }
+
+    .cadastro{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .register-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #F6F8FF;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+        width: 450px;
+    }
+    
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-padrao{
+        background-color: #2e3a59;
+        display: flex;
+        align-items: center;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #ffffff;
+        justify-content: center;
+        cursor: pointer;
+        gap: 8px;
+        height: fit-content;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-padrao:hover{
+        background-color: #4a577a;
+    }
+
+    .form-group{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 15px;
+        height: 100%;
+    }
+
+    .input-field {
+        display: flex;
+        align-items: center;
+        background-color: #ffff;
+        border-radius: 8px;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-control {
+        padding: 10px;
+        width: 100%;
+        border: none;
+        border-radius: 8px;
+    }
+
+    .topo{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    </style>
 </head>
-
 <body>
-    <div class="register-container">
-        <h2 class="text-center mb-4">Cadastro</h2>
-        <form method="post" class="form-group">
-
-            <div class="form-group">
-                <label for="username">Nome de Usuário</label>
-                <input type="text" name="nome" class="form-control" id="username"
-                    placeholder="Digite seu nome de usuário">
+    <section class="cadastro">
+        <div class="register-container">
+            <div class="topo">
+                <h2 class="text-center mb-4">Cadastro</h2>
+                <button class="btn-padrao" onclick="window.location.href='/'">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                </button>
             </div>
+            <form method="post" class="form-group">
 
-            <div class="form-group">
-                <label for="cpf">Cpf</label>
-                <input type="text" name="cpf" class="form-control" id="cpf" placeholder="Digite seu cpf">
-            </div>
+                <div class="form-group">
+                    <label for="username">Nome de Usuário</label>
+                    <div class="input-field">
+                        <input type="text" name="nome" class="form-control" id="username"
+                        placeholder="Digite seu nome de usuário">
+                    </div>
+                </div>
+                
 
-            <div class="form-group">
-                <label for="dataNascimento">Data de nascimento</label>
-                <input type="date" name="dataNasc" class="form-control" id="dataNascimento" placeholder="Digite sua data de nascimento">
-            </div>
+                <div class="form-group">
+                    <label for="cpf">Cpf</label>
+                    <div class="input-field">
+                        <input type="text" name="cpf" class="form-control" id="cpf" placeholder="Digite seu cpf">
+                    </div>
+                </div>
+                    
+                <div class="form-group">
+                    <label for="dataNascimento">Data de nascimento</label>
+                    <div class="input-field">
+                        <input type="date" name="dataNasc" class="form-control" id="dataNascimento" placeholder="Digite sua data de nascimento">
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <label for="telefone">Classificação</label>
-                <input type="text" name="classificacao" class="form-control" id="classificacao" placeholder="Digite a classificação">
-            </div>
+                <div class="form-group">
+                    <label for="telefone">Classificação</label>
+                    <div class="input-field">
+                        <input type="text" name="classificacao" class="form-control" id="classificacao" placeholder="Digite a classificação">
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="Digite seu e-mail">
-            </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <div class="input-field">
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Digite seu e-mail">
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <label for="password">Senha</label>
-                <input type="password" name="senha" class="form-control" id="password" placeholder="Digite sua senha">
-            </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <div class="input-field">
+                        <input type="password" name="senha" class="form-control" id="password" placeholder="Digite sua senha">
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <label for="confirmPassword">Confirme sua Senha</label>
-                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirme sua senha">
-            </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirme sua Senha</label>
+                    <div class="input-field">
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirme sua senha">
+                    </div>
+                </div>
 
-            <button type="submit" class="btn btn-primary btn-block">Cadastrar</button><br>
-            <a href="/login">Voltar</a>
-        </form>
-    </div>
+                <button type="submit" class="btn-padrao" onclick="window.location.href='/login'">Cadastrar</button><br>
+            </form>
+        </div>
+    </section>
 </body>
 
 </html>

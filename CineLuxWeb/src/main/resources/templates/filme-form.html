@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Filme</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: dm-serif-display, serif;
+        }
+
+        body {
+            background-color: antiquewhite;
+            color: black;
+        }
+
+        .cadastro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: #F6F8FF;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+            width: 450px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .input-field {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-control {
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .btn-padrao {
+            background-color: #2e3a59;
+            display: flex;
+            align-items: center;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #ffffff;
+            justify-content: center;
+            cursor: pointer;
+            gap: 8px;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-padrao:hover {
+            background-color: #4a577a;
+        }
+
+        .topo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="cadastro">
+        <div class="register-container">
+
+            <div class="topo">
+                <h2>Cadastro de Filme</h2>
+                <button class="btn-padrao" onclick="window.location.href='/filme'">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                </button>
+            </div>
+
+            <!-- FORM ATUALIZADO -->
+            <form method="post" action="/filme/salvar" class="form-group">
+
+                <input type="hidden" name="id" th:value="${filme.id}" />
+
+                <div class="form-group">
+                    <label for="titulo">Título</label>
+                    <div class="input-field">
+                        <input type="text" name="titulo" id="titulo" class="form-control"
+                               th:value="${filme.titulo}" placeholder="Digite o título do filme" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="genero">Gênero</label>
+                    <div class="input-field">
+                        <input type="text" name="genero" id="genero" class="form-control"
+                               th:value="${filme.genero}" placeholder="Digite o gênero" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="duracao">Duração (minutos)</label>
+                    <div class="input-field">
+                        <input type="number" name="duracao" id="duracao" class="form-control"
+                               th:value="${filme.duracao}" placeholder="Ex: 120" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="sinopse">Sinopse</label>
+                    <div class="input-field">
+                        <input type="text" name="sinopse" id="sinopse" class="form-control"
+                               th:value="${filme.sinopse}" placeholder="Digite a sinopse">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dataLancamento">Data de Lançamento</label>
+                    <div class="input-field">
+                        <input type="date" name="dataLancamento" id="dataLancamento" class="form-control"
+                               th:value="${filme.dataLancamento}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="idioma">Idioma</label>
+                    <div class="input-field">
+                        <input type="text" name="idioma" id="idioma" class="form-control"
+                               th:value="${filme.idioma}" placeholder="Digite o idioma">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-padrao">Salvar</button>
+
+            </form>
+        </div>
+    </section>
+
+</body>
+
+</html>

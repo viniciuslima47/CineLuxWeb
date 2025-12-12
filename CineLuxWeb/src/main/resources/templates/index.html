@@ -1,27 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    body {
-        background-color: black;
-        color: white
-    }
+    <title>Início</title>
 
-    a {
-        color: white;
-        text-decoration: nome;
-    }
-</style>
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'DM Serif Display', serif;
+        }
+
+        body {
+            background-color: antiquewhite;
+            color: black;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-box {
+            background-color: #F6F8FF;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .btn-link {
+            background-color: #2e3a59;
+            padding: 12px;
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+            transition: background-color .3s ease;
+        }
+
+        .btn-link:hover {
+            background-color: #4a577a;
+        }
+    </style>
+</head>
 
 <body>
-    <a href="/login">Login</a><br>
-    <a href="/cadastro">Cadastro</a> <br>
-    <a href="/filme">Cadastro filme</a> <br>
+
+    <div class="container">
+
+        <div class="menu-box">
+            <h1>Menu Inicial</h1>
+
+            <a href="/login" class="btn-link">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                Login
+            </a>
+
+            <a href="/cadastro" class="btn-link">
+                <i class="fa-solid fa-user-plus"></i>
+                Cadastro
+            </a>
+
+            <a href="/filme" class="btn-link">
+                <i class="fa-solid fa-film"></i>
+                Cadastro de Filme
+            </a>
+        </div>
+
+    </div>
+
 </body>
 
 </html>
